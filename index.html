@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Importaciones Colombia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌸 PALETA */
+:root {
+    --primary: #FF6F91;
+    --secondary: #FFC2D1;
+    --bg: #FFF0F5;
+    --card: rgba(255,255,255,0.7);
+    --text: #4A4A4A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔥 CONTENEDOR HORIZONTAL */
+body {
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+}
+
+.container {
+    display: flex;
+    width: 400vw;
+    height: 100vh;
+    transition: transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* 🎬 SLIDES */
+.slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+    transition: filter 0.6s ease;
+}
+
+/* 🔥 EFECTO BLUR ENTRE SLIDES */
+.blur {
+    filter: blur(6px);
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* DASHBOARD */
+iframe {
+    width: 85%;
+    height: 70vh;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+}
+
+.card {
+    width: 240px;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--card);
+    backdrop-filter: blur(7px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card .extra {
+    display: none;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.card.active .extra {
+    display: block;
+}
+
+/* ANALYSIS */
+.analysis {
+    width: 60%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* 🔥 NAV LATERAL */
+.nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav button {
+    display: block;
+    margin: 10px 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.nav button.active {
+    background: var(--primary);
+    transform: scale(1.4);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+<!-- SLIDE 1 -->
+<section class="slide hero">
+    <h1>Importaciones de Colombia</h1>
+    <p>Análisis interactivo 1980–2026</p>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide">
+    <h2>Dashboard</h2>
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMTAzNjQ4OGItYTFmOS00ZTJjLTk2NjgtMTIxMTQwZjkwNjZhIiwidCI6ImVhNjQ5ZTUwLTI3ZDItNDMxOC05Y2I5LTJmY2ZmZTE2ZmQ0MSIsImMiOjR9"></iframe>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide">
+    <h2>Insights</h2>
+
+    <div class="cards">
+
+        <div class="card" onclick="toggleCard(this)">
+            <h3>China vs EE.UU.</h3>
+            <div class="extra">
+                China pasa de ser irrelevante en los años 90 a convertirse en uno de los principales socios comerciales. Su crecimiento refleja cambios estructurales en la economía global y la dependencia de bienes manufacturados.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <h3>Dominio asiático</h3>
+            <div class="extra">
+                Asia supera a Europa como origen de importaciones, evidenciando el desplazamiento del eje económico mundial hacia economías emergentes con alta capacidad productiva.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <h3>Impacto COVID</h3>
+            <div class="extra">
+                En 2020 se observa una caída abrupta debido a la pandemia, seguida de una recuperación rápida, lo que demuestra resiliencia económica pero alta dependencia externa.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <h3>Concentración</h3>
+            <div class="extra">
+                A pesar de cierta diversificación geográfica, el comercio está concentrado en pocos países, especialmente en sectores industriales clave, lo que implica riesgos estructurales.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide">
+    <h2>Análisis</h2>
+
+    <div class="analysis">
+        Colombia ha reducido su dependencia relativa de Estados Unidos mientras China emerge como actor clave. La pandemia generó una caída fuerte en 2020 con recuperación rápida. Sin embargo, el comercio sigue concentrado en pocos países y sectores, evidenciando una dependencia estructural.
+    </div>
+</section>
+
+</div>
+
+<!-- NAV LATERAL -->
+<div class="nav" id="nav">
+    <button onclick="move(0)" class="active"></button>
+    <button onclick="move(1)"></button>
+    <button onclick="move(2)"></button>
+    <button onclick="move(3)"></button>
+</div>
+
+<script>
+
+let current = 0;
+const container = document.getElementById("container");
+const buttons = document.querySelectorAll(".nav button");
+
+function move(index){
+    document.querySelectorAll('.slide').forEach(s => s.classList.add('blur'));
+
+    setTimeout(() => {
+        container.style.transform = `translateX(-${index * 100}vw)`;
+
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('blur'));
+
+        buttons.forEach(b => b.classList.remove("active"));
+        buttons[index].classList.add("active");
+
+        current = index;
+    }, 200);
+}
+
+/* 🎬 SWIPE (TRACKPAD / MOUSE) */
+let startX = 0;
+
+document.addEventListener("mousedown", e => startX = e.clientX);
+document.addEventListener("mouseup", e => {
+    let diff = e.clientX - startX;
+
+    if(diff > 50 && current > 0) move(current - 1);
+    if(diff < -50 && current < 3) move(current + 1);
+});
+
+/* 📱 TOUCH */
+document.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+document.addEventListener("touchend", e => {
+    let diff = e.changedTouches[0].clientX - startX;
+
+    if(diff > 50 && current > 0) move(current - 1);
+    if(diff < -50 && current < 3) move(current + 1);
+});
+
+/* CARDS */
+function toggleCard(card){
+    card.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
