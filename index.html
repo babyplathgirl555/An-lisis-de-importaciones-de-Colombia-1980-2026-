@@ -43,6 +43,48 @@ body {
     box-shadow: 0 0 10px rgba(255,111,145,0.6);
 }
 
+.slide-author {
+    background: var(--bg);
+}
+
+.slide-author h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    color: var(--text);
+}
+
+.slide-author h2 span {
+    color: var(--primary);
+}
+
+/* centrado */
+.slide-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* reutilizamos estilo visual */
+.author-card {
+    width: 300px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 6px 20px var(--shadow);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+}
+
+.author-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px var(--shadow);
+    background: white;
+}
+
 /* ── HORIZONTAL TRACK ─────────────────────────── */
 .container {
     display: flex;
@@ -171,8 +213,10 @@ body {
 .slide-dashboard h2 span { color: var(--primary); }
 
 .iframe-wrap {
-    width: 90%; height: 72vh;
-    border-radius: 18px; overflow: hidden;
+    width: 95%;
+    height: 85vh;
+    border-radius: 18px;
+    overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 16px 48px var(--shadow);
 }
@@ -378,6 +422,16 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2
         </div>
     </section>
 
+    <!-- SLIDE 6 · Información personal -->
+    <section class="slide slide-personal">
+        <h2 class="anim-1">Información <span>Personal</span></h2>
+        <div class="personal-info">
+            <p>Nombre: Miranda Mardini Sarruf</p>
+            <p>Correo: mmardini@utb.edu.co</p>
+            <p>Programa: Ciencia de datos.</p>
+        </div>
+    </section>
+
 </div>
 
 <!-- DOTS -->
@@ -387,6 +441,7 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2
     <button onclick="move(2)" title="Insights"></button>
     <button onclick="move(3)" title="Análisis"></button>
     <button onclick="move(4)" title="Fuentes"></button>
+    <button onclick="move(5)" title="Autor"></button>
 </div>
 
 <!-- ARROWS -->
@@ -400,7 +455,7 @@ h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2
 
 <script>
 let current = 0;
-const TOTAL = 5;
+const TOTAL = 6;
 const container   = document.getElementById("container");
 const dots        = document.querySelectorAll(".nav-dots button");
 const btnPrev     = document.getElementById("btnPrev");
